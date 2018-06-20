@@ -1,5 +1,6 @@
 package com.example.loginlibrary;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +37,9 @@ public class SignInLibraryPage extends AppCompatActivity {
                 hashOfPass = md5(pass);
 
                 if(hashOfPass.equals(hashFromDataBase)){
+                    Intent intent = new Intent();
+                    intent.putExtra("Result","Correct");
+                    setResult(100,intent);
                     finish();
                 }
                 else {
