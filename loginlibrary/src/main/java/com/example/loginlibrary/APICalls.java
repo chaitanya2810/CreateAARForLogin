@@ -64,6 +64,6 @@ public class APICalls {
     public void putDefaultToken(String user){
         int randomNumber = new Random().nextInt(10000)+50000;
         PostToken postToken = new PostToken();
-        postToken.execute("https://api.mlab.com/api/1/databases/testing/collections/testCollection?apiKey=aPlggAYx179AckoNvdrZPyMvc0jrt-qB",user,String.valueOf(randomNumber));
+        postToken.execute("https://api.mlab.com/api/1/databases/testing/collections/tokenCollection?apiKey=aPlggAYx179AckoNvdrZPyMvc0jrt-qB",user,String.valueOf(randomNumber));
     }
 }
