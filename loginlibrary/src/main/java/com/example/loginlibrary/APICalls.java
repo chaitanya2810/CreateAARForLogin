@@ -52,7 +52,7 @@ public class APICalls {
             String res = getData.execute(url).get();
             JSONArray jsonArray = new JSONArray(res);
             JSONObject arrayObject = jsonArray.getJSONObject(0);
-            String fetchedValue = arrayObject.getString("value");
+            String fetchedValue = arrayObject.getString("TokenValue");
             return fetchedValue;
         }catch (Exception e){
             e.printStackTrace();
