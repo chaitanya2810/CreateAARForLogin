@@ -39,6 +39,7 @@ public class SignInLibraryPage extends AppCompatActivity {
                 if(hashOfPass.equals(hashFromDataBase)){
                     Intent intent = new Intent();
                     intent.putExtra("Result","Correct");
+                    intent.putExtra("UserName",user);
                     setResult(100,intent);
                     finish();
                 }
@@ -48,6 +49,9 @@ public class SignInLibraryPage extends AppCompatActivity {
             }
         });
     }
+
+
+    //Function to get hash value of string MD5
 
     public static final String md5(final String s) {
         final String MD5 = "MD5";

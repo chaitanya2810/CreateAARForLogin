@@ -25,6 +25,9 @@ public class APICalls {
         return "";
     }
 
+
+    //Function to upload data on cloud (Sign up)
+
     public void postData(String user,String hashOfPass){
 
         Map<String,String> signupData = new HashMap<>();
@@ -33,5 +36,10 @@ public class APICalls {
 
         PostData callAPI = new PostData(signupData);
         callAPI.execute("https://api.mlab.com/api/1/databases/testing/collections/testCollection?apiKey=aPlggAYx179AckoNvdrZPyMvc0jrt-qB",user,hashOfPass);
+    }
+
+    public void putData(String username,int randomNumber){
+        PutData putData = new PutData();
+        putData.execute("https://api.mlab.com/api/1/databases/testing/collections/tokenCollection?q={'UserName':'"+username+"'}&apiKey=aPlggAYx179AckoNvdrZPyMvc0jrt-qB", username, String.valueOf(randomNumber));
     }
 }
